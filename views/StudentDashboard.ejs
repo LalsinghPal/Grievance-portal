@@ -1,0 +1,229 @@
+<!--student dashboard start-->
+<%- include("./header.ejs") %>
+<div class="container-fluid">
+    <div class="row ">
+   <div class="col-md-4 mt-5">
+    <div class="card">
+      <div class="card-body text-center">
+
+     
+    <img src="<%= image.url %>" alt="" height="180px" width="200px " class="rounded-circle">
+     <h4 style="margin-top: 10px;">StudentProfile Info</h4>
+     <h4> <i class="fa-solid fa-user"></i> &nbsp;<%= name %></h4>
+     <h4><i class="fa-sharp fa-solid fa-envelope"></i>&nbsp;<%= email %></h4>
+     <h4><i class="fa-solid fa-phone"></i> &nbsp;<%= phone %> <br></h4>
+    <h4><%= rollno %></h4>
+
+     <button data-bs-toggle="modal"
+     data-bs-target="#updateprofile" class="btn btn-primary">Update profile</button>
+
+     <button data-bs-toggle="modal"
+     data-bs-target="#ChangePassword" class="btn btn-primary">Change Password</button><br><br>
+
+     <button  class="btn btn-success">
+     <a href="/logout"> </a>
+    Logout
+  </button>
+
+
+
+
+   </div>
+  </div>
+</div>
+   <div class="col-md-4 mt-5">
+    <div class="card">
+      <div class="card-body">
+
+     
+    <h1>Hello Lalsingh</h1>
+  </div>
+</div>
+  </div>
+   <div class="col-md-4 mt-5">
+    <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Notifications</h5>
+          <p class="card-text">View the notification from grivence cell.</p>
+          <button data-bs-toggle="modal"
+          data-bs-target="#updateprofile" class="btn btn-primary">See notification</button> 
+        </div>
+      </div>
+    </div>
+   </div>
+    </div>
+</div>
+
+<div class="container-fluid mt-5">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card">
+       
+                <div class="card-body">
+                  <h5 class="card-title">Post a Grivence</h5>
+                  <p class="card-text">view notification.</p>
+                  <button data-bs-toggle="modal"
+                  data-bs-target="#exampleModalToggle2" class="btn btn-primary">complaint</button>
+                </div>
+              </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+       
+                <div class="card-body">
+                  <h5 class="card-title">########</h5>
+                  <p class="card-text">view notification.</p>
+                  <button data-bs-toggle="modal"
+                  data-bs-target="#updateprofile" class="btn btn-primary">Add</button>
+                  <button data-bs-toggle="modal"
+                  data-bs-target="#updateprofile" class="btn btn-primary">Message</button>
+                </div>
+              </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+       
+                <div class="card-body">
+                  <h5 class="card-title">view status</h5>
+                  <p class="card-text">view notification.</p>
+                  <button data-bs-toggle="modal"
+                  data-bs-target="" class="btn btn-primary">View</button>
+                </div>
+              </div>
+        </div>
+    </div>
+</div>
+
+
+<!--complaint model -->
+
+<div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalToggleLabel">Modal 1</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Show a second modal and hide this one with the button below.
+        </div>
+       
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+    <div class="modal-dialog modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalToggleLabel2">Complaint</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form action="/complain" method="post" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label for="">ComplaintType</label>
+                    <input type="text" name="complaintype" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label for="">Semester</label>
+                    <input type="text" name="semester" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label for="">Course</label>
+                    <input type="text" name="course" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label for="">Rollno.</label>
+                    <input type="text" name="rollno" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label for="">ComplaintDetail</label>
+                    <input type="text" name="complaindetail" class="form-control">
+                </div>
+                <div class="mb-3">
+                  <label for="">Image</label>
+                  <input type="file" name="image" class="form-control">
+              </div>
+               <center> <button type="submit" class="btn btn-success">Submit</button></center>
+
+            </form>
+        </div>
+      
+      </div>
+    </div>
+  </div>
+ 
+
+  <!--updateProfile Modal -->
+  <div class="modal fade" id="updateprofile" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Profile Update</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="/studentdashboard/updateprofile" method="post" enctype="multipart/form-data">
+                    <div class="mb-3">
+                        <label for="">Name</label>
+                        <input type="text" value="<%= name %>" name="name" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label for="">Email</label>
+                        <input type="text" value="<%= email %>" name="email" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label for="">Image</label>
+                        <input type="file"  name="image" class="form-control">
+                        <img src="<%= image.url %>" alt="" width="50">
+                    </div>
+                    
+                    <button type="submit" class="btn btn-success">Update Profile</button>
+
+                </form>
+            </div>
+
+        </div>
+    </div>
+ </div>
+<!--End updateProfile Modal -->
+
+  <!--Change Password Modal -->
+  <div class="modal fade" id="ChangePassword" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Change Password</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="/studentdashboard/changePassword" method="post">
+                    <div class="mb-3">
+                        <label for="">Old Password</label>
+                        <input type="text" name="op" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label for="">New Password</label>
+                        <input type="password" name="np" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label for="">Confirm Password</label>
+                        <input type="password" name="cp" class="form-control">
+                    </div>
+                    <button type="submit" class="btn btn-success">Change Password</button>
+
+                </form>
+            </div>
+
+        </div>
+    </div>
+ </div>
+
+
+<!--End Change Password Modal -->
+
+
+
+
+
+  <%- include("./footer.ejs") %>

@@ -1,0 +1,60 @@
+<%- include("./header.ejs") %>
+<br>
+<center><h1>View complaint</h1></center>
+<br>
+
+
+<div class="card-body">
+    <table id="example1" class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>id</th>
+          <th>complain type</th>
+          <th>semester</th>
+          <th>course</th>
+          <th>rollno</th>
+          <th>complaindetail</th>
+          <th>image</th>
+        </tr>
+      </thead>  
+      <tbody>
+        <% d.forEach((item)=>{ %>
+          <tr>
+            <td><%= item.id %></td>
+            <td><%= item.complaintype %></td>
+            <td><%= item.semester %></td>
+            <td><%= item.course %></td>
+            <td><%= item.rollno %></td>
+            <td><%= item.complaindetail %></td>
+            <th><img src="<%= item.image.url%>" alt="" width="50"></th>
+
+            <td>
+
+              <form action="/admin/updatestatus/<%= item.id %>" method="post">
+                <textarea name="comment" id=""></textarea>
+            </td>
+
+            <td>
+                <button type="submit" class="btn btn-success" name="status" value="Approved">Approved</button>
+                <button type="submit" class="btn btn-primary" name="status" value="Reject">Rejected</button>
+              </form>
+            </td>
+        
+          </tr>
+       <% }) %>
+      </tbody>
+    
+    </table>
+  </div>
+  <!-- /.card-body -->
+</div>
+<!-- /.card -->
+</div>
+
+
+
+
+
+
+
+<%- include("./footer.ejs") %>

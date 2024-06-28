@@ -1,0 +1,150 @@
+<%- include("../header.ejs") %> <%- include("../sidebar.ejs") %>
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <div class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h1 class="m-0">Display</h1>
+        </div>
+        <!-- /.col -->
+        <div class="col-sm-6">
+          <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item active">Display</li>
+          </ol>
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </div>
+    <!-- /.container-fluid -->
+  </div>
+  <!-- /.content-header -->
+  <!-- </div> -->
+  <div class="card">
+    <button
+      type="button"
+      class="btn btn-info"
+      style="float: left"
+      data-toggle="modal"
+      data-target="#modal-default"
+    >
+      Add students
+    </button>
+    <!-- /.card-header -->
+    <div class="card-body">
+      <table id="example1" class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Rollno</th>
+            <th>DOB</th>
+            <th>Address</th>
+            <th>Image</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% d.forEach((item)=>{ %>
+          <tr>
+            <td><%= item.id %></td>
+            <td><%= item.name %></td>
+            <td><%= item.rollno %></td>
+            <td><%= item.address %></td>
+            <td><%= item.dob %></td>
+            <td><img src="<%= item.image.url %>" width="50px" alt="" /></td>
+            <td>
+              <a href="/admin/Student/View/<%= item.id %>" class="btn btn-info">
+                View</a
+              >
+              <a href="/admin/Student/Edit/<%= item.id %>" class="btn btn-info"
+                >Edit</a
+              >
+              <a
+                href="/admin/Student/Delete/<%= item.id %>"
+                class="btn btn-info"
+                >Delete</a
+              >
+            </td>
+          </tr>
+          <% }) %>
+        </tbody>
+        
+      </table>
+    </div>
+    <!-- /.card-body -->
+  </div>
+  <!-- /.card -->
+</div>
+
+<div class="modal fade" id="modal-default">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Add Students</h4>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form
+          action="/admin/studentInsert"
+          method="post"
+          enctype="multipart/form-data"
+        >
+          <div class="mb-3">
+            <label for="">Student Name</label>
+            <input type="text" name="name" class="form-control" value="" />
+            <label for="">Email</label>
+            <input type="email" name="email" class="form-control" />
+            <label for="">DOB</label>
+            <input type="date" name="dob" class="form-control" />
+            <label for="">Phone</label>
+            <input type="number" name="phone" class="form-control" />
+            <label for="">Roll number</label>
+            <input type="number" name="rollno" class="form-control" />
+            <label for="">Address</label>
+            <input type="text" name="address" class="form-control" />
+            <label for="">City</label>
+            <input type="text" name="city" class="form-control" />
+            <label for="">password</label>
+            <input type="password" name="password" class="form-control" />
+            <label for="">Courses</label>
+            <select name="course" id="" class="form-control">
+              <option value="">Select Course</option>
+              <% course.forEach((c)=>{ %> 
+                <option value="<%=c.name  %>"><%=c.name  %></option>
+                
+                
+              <% }) %>
+            </select>
+            <label for="">Images</label>
+            <input type="file" name="image" class="form-control" />
+
+            <center>
+              <button
+                class="btn btn-info"
+                type="submit"
+                style="margin-top: 25px"
+              >
+                Submit
+              </button>
+            </center>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- /.modal-content -->
+  </div>
+  <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+
+<%- include("../footer.ejs") %>

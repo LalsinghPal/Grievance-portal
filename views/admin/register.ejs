@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Form</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Custom CSS -->
+  <style>
+    .registration-container {
+      margin-top: 50px;
+      background-color: beige;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card registration-container">
+          <div class="card-header text-center">
+           <h3>Registration Form</h3> 
+          </div>
+          <div class="card-body">
+            <form action="/Admininsert" method="post" enctype="multipart/form-data">
+              <div class="mb-3">
+                <label for="username">Username</label>
+                <input type="text" name="name" class="form-control" id="username" placeholder="Enter username">
+              </div>
+              <div class="mb-3">
+                <label for="email">Email</label>
+                <input type="email" name="email" class="form-control" id="email" placeholder="Enter email">
+              </div>
+              
+              <div class="mb-3">
+                <label for="password">Password</label>
+                <input type="password" name="password" class="form-control" id="password" placeholder="Password">
+              </div>
+              <div class="mb-3">
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="password" name="confirmPassword" class="form-control" id="confirmPassword" placeholder="Confirm password">
+              </div>
+              <div class="mb-3">
+                <label for="email">Image</label>
+                <input type="file" name="image" class="form-control" id="email" placeholder="Enter email">
+              </div>
+             <center> <button type="submit" class="btn btn-primary ">Submit</button></center>
+            
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

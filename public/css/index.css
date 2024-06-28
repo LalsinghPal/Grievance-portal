@@ -1,0 +1,189 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.top-bar {
+    padding: 30px;
+}
+.fa-solid, .fas {
+    font-weight: 900;
+    font-family: "Font Awesome 6 Free";
+}
+.number {
+    font-size: 27px;
+    font-weight: 500;
+}
+.non {
+    text-decoration: none;
+}
+.top-bar a h1 {
+    color: #213e94;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 48px;
+}
+.non span {
+    color: #f3aa92;
+    font-weight: 700;
+    font-size: 42px;
+    padding-top: 50px;
+}
+.icon {
+    font-size: 33px;
+    border-radius: 55px;
+    margin: 3px;
+    color: #213e94;
+}
+
+.navbar {
+    background-color: #213e94 !important;
+}
+.sticky-top.navbar-dark .navbar-nav .nav-link {
+    padding: 20px 15px;
+}
+.carousel-inner {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+.carousel {
+    position: relative;
+}
+.why {
+    padding-top: 30px;
+    color: #213e94;
+    font-family: sans-serif;
+    font-weight: 600;
+}
+.why span {
+    padding-top: 30px;
+    color: #f3aa92;
+    font-family: sans-serif;
+    font-weight: 600;
+}
+.whygreviance {
+    padding-top: 30px;
+    color: #213e94;
+    font-family: sans-serif;
+    font-weight: 400;
+    letter-spacing: 1px;
+    font-size: 19px;
+}
+.main {
+    background-color: #213e94;
+    padding: 20px;
+}
+.component i {
+    font-size: 100px;
+    color: #f3aa92;
+}
+.comborder {
+    border: 2px solid white;
+    padding: 20px;
+}
+.comborder h2 {
+    color: #fff;
+    padding: 5px;
+}
+.comborder p {
+    color: #fff;
+}
+.loginbt {
+    background-color: #f3aa92 !important;
+    color: white !important;
+}
+.w-100 {
+    width: 100% !important;
+}
+.non {
+    text-decoration: none;
+}
+.foot1 p {
+    letter-spacing: 1px;
+    font-family: sans-serif;
+    padding-top: 30px;
+    line-height: 2;
+}
+.non span {
+    color: #f3aa92;
+    font-weight: 700;
+    font-size: 42px;
+    padding-top: 50px;
+}
+
+.foo h1 {
+    color: #213e94;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 42px;
+    padding-top: 50px;
+}
+.foot1 .h2 {
+    font-family: sans-serif;
+    padding-top: 40px;
+    font-size: 28px;
+    font-weight: 600;
+}
+h2 {
+    font-size: 2rem;
+    padding-top: 40px;
+}
+.ul li a{
+    text-decoration: none;
+    color: black;
+    font-size: 15px;
+    font-family: var(--bs-body-font-family);
+}
+h6 {
+    font-size: 1rem;
+}
+.foot1 a i {
+    color: #213e94;
+    font-size: 50px;
+    padding-top: 25px;
+}
+.paddingtop {
+    padding: 40px;
+}
+form {
+    display: block;
+    margin-top: 0em;
+    unicode-bidi: isolate;
+}
+.comborder h2 {
+    color: #fff;
+    padding: 5px;
+}
+.Your {
+    font-family: sans-serif;
+    font-size: 30px;
+    color: white;
+    font-weight: 600;
+}
+.help {
+    padding: 10px;
+}
+.subbtn {
+    background-color: #f3aa92 !important;
+    color: white !important;
+}
+.shadow-lg {
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+}
+.cursive {
+    font-family: cursive;
+    color: white;
+    font-weight: 800;
+    font-size: 100px;
+}
+.main {
+    background-color: #213e94;
+    padding: 20px;
+}
+
+
+
+
